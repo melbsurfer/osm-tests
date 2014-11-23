@@ -15,40 +15,16 @@ $(function(){
 	    target: 'map',
 	    renderer: 'canvas',
 	    layers: [
-	    //    	new ol.layer.Tile({
-    	// 		source: new ol.source.MapQuest({layer: 'sat'})
-  			// }),
 			new ol.layer.Tile({
 			    opacity: 1.0,
 			    source: new ol.source.TileWMS({
-					url: 'http://localhost:8080/geoserver/osm/wms',
-		      		params: {'LAYERS': 'omar-basemap_lg', 'TILED': true },
+					url: 'http://192.168.1.15:8080/geoserver/gwc/service',
+		      		params: {'LAYERS': 'osm:omar-basemap_lg', 'TILED': true },
 			      	//serverType: 'geoserver'
     			})
  			 }),
-			// new ol.layer.Tile({
-			//     opacity: 1.0,
-			//     source: new ol.source.TileWMS({
-			// 		url: 'http://localhost:8080/geoserver/osm/wms',
-		 //      		params: {'LAYERS': 'planet_osm_line', 'TILED': true},
-			//       	//serverType: 'geoserver'
-   //  			})
- 		// 	 }),
-			// new ol.layer.Image({
-			//     opacity: 1.0,
-			//     source: new ol.source.ImageWMS({
-			// 		url: 'http://localhost:8080/geoserver/osm/wms',
-		 //      		params: {'LAYERS': 'osm:planet_osm_line'},
-			//       	serverType: 'geoserver'
-   //  			})
- 		// 	 })
 	    ],
-	    view: view //new ol.View({
-	      // center: ol.proj.transform([-80.6552775, 28.1174805], 'EPSG:4326', 'EPSG:3857'),
-	      // zoom: 15
-	       //center: ol.proj.transform([35.4954794, 33.8886284], 'EPSG:4326', 'EPSG:3857'),
-	      //zoom: 14
-	    //})
+	    view: view 
 	});
 
 	var fly = document.getElementById('fly');
